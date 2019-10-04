@@ -12,7 +12,7 @@ export const useAsyncSubscription = fn => {
           setData(value);
         }
         if (ref) {
-          ref.on('child_changed', child => {
+          ref.on('child_added', child => {
             setData(d => ({ ...d, [child.key]: child.val() }));
           });
         }
